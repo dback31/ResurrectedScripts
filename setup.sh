@@ -100,7 +100,7 @@ tput setaf 2
 	cd $aosppath
 	echo  
 	repo init -u git://github.com/AOSP-CAF/platform_manifest.git -b mm6.0
-	time repo sync --force-broken --force-sync --no-clone-bundle --quiet
+	time repo sync -c -f -j8 --force-sync --no-clone-bundle --no-tags
 	echo  
 	echo  
 	echo -e "${bldcya}The aosp Source Code has been downloaded into ${aosppath}"
