@@ -92,20 +92,18 @@ clear
 	echo  
 	sleep 2
 tput setaf 3
-	echo -e "${bldcya}Enter the path where source code should be downloaded in full format.\nDefault is ${HOME}/aosp"
-	read aosppath
+	echo -e "${bldcya}Enter the path where source code should be downloaded in full format.Default is ~/aosp"
 tput setaf 2
-	mkdir -p $aosppath
-	cp build.sh $aosppath/build.sh
-	cd $aosppath
+	mkdir -p ~/aosp
+	cd ~/aosp
 	echo  
 	repo init -u git://github.com/AOSP-CAF/platform_manifest.git -b mm6.0
 	time repo sync -c -f -j8 --force-sync --no-clone-bundle --no-tags
 	echo  
 	echo  
-	echo -e "${bldcya}The aosp Source Code has been downloaded into ${aosppath}"
-	echo -e "${bldcya}You can now run the build script in ${aosppath}"
+	echo -e "${bldcya}The aosp Source Code has been downloaded into ~/aosp"
+	echo -e "${bldcya}You can now run the build script in ~/aosp"
 	echo -e "${bldcya}Please remember to run ccache -M 40 to set 40gb of ccache, before you start your first build :D" 
 	echo -e "${bldcya}This value can be shifted up/down a bit to your liking" 
-	cd $aosppath
+	cd ~/aosp
 exit
