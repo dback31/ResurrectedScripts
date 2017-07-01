@@ -18,20 +18,6 @@ bldcya=${txtbld}$(tput setaf 6) # Bold Cyan
 bldwht=${txtbld}$(tput setaf 7) # Bold White
 
 clear
-        echo -e "${bldred}          ___          ___     "
-        echo -e "${bldred}         /  /\        /  /\    "
-        echo -e "${bldred}        /  /::\      /  /::\   "
-        echo -e "${bldred}       /  /:/\:\    /  /:/\:\  "
-        echo -e "${bldred}      /  /:/~/:/   /  /:/~/:/  "
-        echo -e "${bldred}     /__/:/ /:/___/__/:/ /:/___"
-        echo -e "${bldred}     \  \:\/:::::/\  \:\/:::::/"
-        echo -e "${bldred}      \  \::/~~~~  \  \::/~~~~ "
-        echo -e "${bldred}       \  \:\       \  \:\     "
-        echo -e "${bldred}        \  \:\       \  \:\    "
-        echo -e "${bldred}         \__\/        \__\/    "
-        echo -e "${bldred}                               "
-        echo -e "${bldred}       RESURRECTION REMIX OS   "
-        echo -e "${bldred}                               "
         echo -e "${bldred}       M A R S H M A L L O W   "
         echo -e "${bldred}                               "
         echo -e "${bldcya}     Setting up your computer! "
@@ -100,40 +86,26 @@ tput setaf 3
 	sleep 5
 tput setaf 2
 clear
-	echo -e "${bldred}          ___          ___     "
-	echo -e "${bldred}         /  /\        /  /\    "
-	echo -e "${bldred}        /  /::\      /  /::\   "
-	echo -e "${bldred}       /  /:/\:\    /  /:/\:\  "
-	echo -e "${bldred}      /  /:/~/:/   /  /:/~/:/  "
-	echo -e "${bldred}     /__/:/ /:/___/__/:/ /:/___"
-	echo -e "${bldred}     \  \:\/:::::/\  \:\/:::::/"
-	echo -e "${bldred}      \  \::/~~~~  \  \::/~~~~ "
-	echo -e "${bldred}       \  \:\       \  \:\     "
-	echo -e "${bldred}        \  \:\       \  \:\    "
-	echo -e "${bldred}         \__\/        \__\/    "
-	echo -e "${bldred}                               "
-	echo -e "${bldred}       RESURRECTION REMIX OS   "
-	echo -e "${bldred}                               "
 	echo -e "${bldred}       M A R S H M A L L O W   "
 	echo -e "${bldred}                               "
 	echo -e "${bldcya}      Downloading Source Code! "
 	echo  
 	sleep 2
 tput setaf 3
-	echo -e "${bldcya}Enter the path where source code should be downloaded in full format.\nDefault is ${HOME}/rr"
-	read rrpath
+	echo -e "${bldcya}Enter the path where source code should be downloaded in full format.\nDefault is ${HOME}/aosp"
+	read aosppath
 tput setaf 2
-	mkdir -p $rrpath
-	cp build.sh $rrpath/build.sh
-	cd $rrpath
+	mkdir -p $aosppath
+	cp build.sh $aosppath/build.sh
+	cd $aosppath
 	echo  
-	repo init -u git://github.com/ResurrectionRemix/platform_manifest.git -b marshmallow
+	repo init -u git://github.com/AOSP-CAF/platform_manifest.git -b mm6.0
 	time repo sync --force-broken --force-sync --no-clone-bundle --quiet
 	echo  
 	echo  
-	echo -e "${bldcya}The RR Source Code has been downloaded into ${rrpath}"
-	echo -e "${bldcya}You can now run the build script in ${rrpath}"
+	echo -e "${bldcya}The aosp Source Code has been downloaded into ${aosppath}"
+	echo -e "${bldcya}You can now run the build script in ${aosppath}"
 	echo -e "${bldcya}Please remember to run ccache -M 40 to set 40gb of ccache, before you start your first build :D" 
 	echo -e "${bldcya}This value can be shifted up/down a bit to your liking" 
-	cd $rrpath
+	cd $aosppath
 exit
