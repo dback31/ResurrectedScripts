@@ -92,16 +92,16 @@ clear
 	echo  
 	sleep 2
 tput setaf 3
-	echo -e "${bldcya}Enter the path where source code should be downloaded in full format.Default is ~/aosp"
+	echo -e "${bldcya}Enter the path where source code should be downloaded in full format.Default is ~/android"
 tput setaf 2
-	mkdir -p ~/aosp
-	cd ~/aosp
+	mkdir -p ~/android
+	cd ~/android
 	echo  
-	repo init -u git://github.com/AOSP-CAF/platform_manifest.git -b mm6.0
+	repo init -u git://github.com/LineageOS/android.git -b cm-13.0
 	time repo sync -c -f -j8 --force-sync --no-clone-bundle --no-tags
 	echo  
 	echo  
-	echo -e "${bldcya}The aosp Source Code has been downloaded into ~/aosp"
+	echo -e "${bldcya}The android Source Code has been downloaded into ~/aosp"
 	echo -e "${bldcya}You can now run the build script in ~/aosp"
 	echo -e "${bldcya}Please remember to run ccache -M 40 to set 40gb of ccache, before you start your first build :D" 
 	echo -e "${bldcya}This value can be shifted up/down a bit to your liking" 
